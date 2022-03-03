@@ -1,5 +1,5 @@
 import React from 'react'
-import { removeUserSession, getUser } from './Common';
+import {getUser, removeUserSession  } from './Common';
 
 const Dashboard = (props) => {
     const user = getUser();
@@ -8,7 +8,9 @@ const Dashboard = (props) => {
         props.history.push('/Login');
     }
   return (
-    <div>Welcome {user.name} <br/> <br/>
+    <div>
+<h1>hey</h1>
+    Welcome {user.name}!<br/> <br/>
     <input
     type="button"
     value="Logout"

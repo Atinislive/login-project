@@ -13,9 +13,9 @@ const Login = (props) => {
     setError(null);
     setLoading(true);
     axios
-      .post("http://analyticsv.pythonanywhere.com/user", {
-        username: "test@mail.com",
-        password: "Testpassword",
+      .post("http://localhost:4000/users/signin", {
+        username:username,
+        password: password,
       })
       .then((response) => {
         setLoading(false);
@@ -27,7 +27,7 @@ const Login = (props) => {
        
         console.log("error >>> ", error);
       });
-    // props.history.push('/dashboard');
+    props.history.push('/dashboard');
   };
   return (
     <div>

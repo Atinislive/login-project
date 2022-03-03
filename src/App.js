@@ -18,11 +18,11 @@ const App = () => {
     if (!token){
       return
     }
-    axios.get( `http://analyticsv.pythonanywhere.com/varifyToken?token={9933cf19fa00ec0d2b6d6352a99ef19b1e149f20}`) .then(
+    axios.get( `http://analyticsv.pythonanywhere.com/varifyToken?token${token}`) .then(
       response=>{
         setUserSession(response.data.token, response.data.user)
 setAuthLoading(false)
-      }).catch(error=>{
+      }).catch( error=>{
         removeUserSession()
         setAuthLoading(false)
       })
